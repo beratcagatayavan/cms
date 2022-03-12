@@ -11,8 +11,12 @@ class Product_model extends CI_Model {
 
     /** Tüm Kayıtları Getirecek Olan Method */
     public function get_all(){
-
         return $this->db->get("$this->tableName")->result();
+    }
+
+    public function add($data = array()){
+
+        return $this->db->insert($this->tableName, $data);
 
     }
 
