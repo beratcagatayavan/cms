@@ -74,9 +74,13 @@ class Product extends CI_Controller {
             );
 
             if ($insert){
-                echo "Kayıt İşlemi Başarılı";
+
+                redirect(base_url("product"));
+
             } else {
-                echo "Kayıt İşlemi Başarısız";
+
+                redirect(base_url("product"));
+                
             }
 
         } else {
