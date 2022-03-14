@@ -39,7 +39,7 @@
                             </td>
                             <td>
                                 <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
-                                <a href="#" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="<?php echo base_url("product/update_form/$item->id"); ?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
