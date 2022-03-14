@@ -13,8 +13,8 @@ class Product extends CI_Controller {
 
     }
 
-    public function index(){
-
+    public function index()
+    {
         $viewData = new stdClass();
 
         /** Tablodan Verilerin Getirilmesi */
@@ -28,11 +28,10 @@ class Product extends CI_Controller {
         $viewData->items = $items;
 
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
-
     }
 
-    public function new_form(){
-
+    public function new_form()
+    {
         $viewData = new stdClass();
 
         /** View'e Gönderilecek Değişkenlerin Set Edilmesi */
@@ -41,11 +40,10 @@ class Product extends CI_Controller {
         $viewData->subViewFolder = "add";
 
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
-
     }
 
-    public function save(){
-
+    public function save()
+    {
         $this->load->library("form_validation");
 
         // Kurallar yazılır..
@@ -101,12 +99,10 @@ class Product extends CI_Controller {
             // Kayıt İşlemi Başlar
         // Başarısız ise
             // Hata Ekranda Gösterilir
-
-
     }
 
-    public function update_form($id){
-
+    public function update_form($id)
+    {
         $viewData = new stdClass();
 
         /** Tablodan Verilerin Getirilmesi */
@@ -125,11 +121,10 @@ class Product extends CI_Controller {
 
 
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
-
     }
 
-    public function update($id){
-
+    public function update($id)
+    {
         $this->load->library("form_validation");
 
         // Kurallar yazılır..
@@ -194,7 +189,25 @@ class Product extends CI_Controller {
         // Kayıt İşlemi Başlar
         // Başarısız ise
         // Hata Ekranda Gösterilir
+    }
 
+    public function delete($id)
+    {
+        $delete = $this->product_model->delete(
+            array(
+                "id"    =>  $id
+            )
+        );
+
+        if ($delete){
+
+            redirect(base_url("product"));
+
+        } else {
+
+            redirect(base_url("product"));
+
+        }
 
     }
 
